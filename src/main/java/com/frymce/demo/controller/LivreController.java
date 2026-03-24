@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -33,6 +34,12 @@ public class LivreController {
     @PostMapping
     public Livre createLivre(@RequestBody Livre livre) {
         return livreService.enregistrerLivre(livre);
+    }
+
+    //Pour modifier un livre (PUT)
+    @PutMapping("/{id}")
+    public Livre updateLivre(@PathVariable Long id, @RequestBody Livre livre) {
+        return livreService.modifier(id, livre);
     }
 
     //Pour supprimer un livre (DELETE)

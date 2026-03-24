@@ -27,4 +27,9 @@ public class Livre {
     public Long getId(){return id;}
     public String getTitre(){return titre;}
     public String getAuteur(){return auteur;}
+
+    public void setId(Long id2) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setId'");
+    }
 }

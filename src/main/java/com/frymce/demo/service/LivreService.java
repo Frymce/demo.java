@@ -23,4 +23,8 @@ public class LivreService {
     public void supprimer(Long id){
         livreRepository.deleteById(id);
     }
+    public Livre modifier(Long id, Livre livreModifier) {
+        livreModifier.setId(id); //On s'assure de modifier le bon ID
+        return livreRepository.save(livreModifier);
+    }
 }
